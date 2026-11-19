@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Ledger — GTA 6 Trophy Guide &amp; Tracker</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="brand">
+    <div class="mark" aria-hidden="true">LL</div>
+    <div>
+      <h1>Leonida Ledger</h1>
+      <p class="tagline">The GTA 6 trophy guide &amp; tracker — all 55 PlayStation 5 trophies, honestly sourced.</p>
+    </div>
+  </div>
+  <div class="stats" id="stats" aria-live="polite">
+    <div class="big-number"><span id="earnedCount">0</span><span class="of">/ 55 earned</span></div>
+    <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    <p class="stat-line" id="statLine">0% complete · 0 platinum · 0 gold · 0 silver · 0 bronze</p>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Sections">
+  <button type="button" class="tab active" data-view="tracker" id="tabTracker">Tracker</button>
+  <button type="button" class="tab" data-view="roadmap" id="tabRoadmap">Roadmap to Platinum</button>
+  <button type="button" class="tab" data-view="missable" id="tabMissable">Missable trophies</button>
+  <button type="button" class="tab" data-view="sources" id="tabSources">Sources &amp; honesty note</button>
+</nav>
+
+<main>
+  <section id="view-tracker" class="view">
+    <div class="missable-banner" id="missableBanner">
+      <strong>Only 1 trophy can possibly be missed:</strong>
+      <span><b>Positive Mental Attitude</b> — meditate at every spot. In Chapter 1, one morning at Jason's house, Lucia walks to the balcony to meditate. Follow her and accept, or that moment is gone after Chapter 1. (PowerPyx — unconfirmed whether the trophy needs it, so do it anyway.)</span>
+    </div>
+
+    <div class="controls">
+      <label class="search-label">Search <input id="search" type="search" placeholder="Trophy name or description…" autocomplete="off"></label>
+      <label>Kind
+        <select id="kindFilter">
+          <option value="all">All kinds</option>
+          <option value="story">Story</option>
+          <option value="missable">Missable</option>
+          <option value="collectibles">Collectibles</option>
+          <option value="activities">Activities</option>
+          <option value="other">Other</option>
+        </select>
+      </label>
+      <label>Grade
+        <select id="gradeFilter">
+          <option value="all">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+      <label>Show
+        <select id="statusFilter">
+          <option value="all">All trophies</option>
+          <option value="earned">Earned only</option>
+          <option value="remaining">Not yet earned</option>
+        </select>
+      </label>
+      <label class="spoiler-toggle"><input id="spoilerToggle" type="checkbox"> Hide spoilers — mask story trophies until earned</label>
+    </div>
+
+    <div class="toolbar">
+      <button id="exportBtn" type="button">Export progress (.json)</button>
+      <button id="importBtn" type="button">Import progress</button>
+      <input id="importFile" type="file" accept="application/json,.json" hidden>
+      <button id="resetBtn" type="button" class="quiet">Reset progress</button>
+      <span class="saved-note" id="savedNote">Progress saves in this browser (localStorage) — no account, no network.</span>
+    </div>
+
+    <p class="result-count" id="resultCount"></p>
+    <ul class="trophy-list" id="trophyList"></ul>
+  </section>
+
+  <section id="view-roadmap" class="view" hidden>
+    <h2 id="roadmapTitle">Road to the Platinum</h2>
+    <p class="roadmap-summary" id="roadmapSummary"></p>
+    <ol class="phases" id="phaseList"></ol>
+  </section>
+
+  <section id="view-missable" class="view" hidden>
+    <h2>Missable trophies</h2>
+    <p>Launch-era guides agree: <strong>only one trophy is possibly missable</strong>. Everything else can be finished in free roam after the story, and nothing on the 100% checklist is permanently missable (PowerPyx, GTABase).</p>
+    <ul class="trophy-list" id="missableList"></ul>
+    <h3>How to stay safe</h3>
+    <ol class="safety-list">
+      <li>Keep a manual save at the start of every chapter — there is no mission replay.</li>
+      <li>In Chapter 1, do Lucia's balcony meditation at Jason's house the morning after the mission Down to Earth.</li>
+      <li>Keep one save from before the final mission, just in case.</li>
+    </ol>
+  </section>
+
+  <section id="view-sources" class="view" hidden>
+    <h2>Sources &amp; honesty note</h2>
+    <p>Grand Theft Auto VI launched 19 November 2026. The trophy names, descriptions and grades are the official PlayStation 5 list, as mirrored by Exophase and PSNProfiles. Every guide in this ledger is written in its own words for this entry, and each one names its sources beside it. Where a step is not yet confirmed in-game, the guide says so plainly — a cited, honest guide beats an invented one, and this ledger invents no locations, mission steps or counts.</p>
+    <ul class="source-list">
+      <li><strong>Official trophy list</strong> — PlayStation, as mirrored by Exophase and PSNProfiles: the 55 names, descriptions, grades and hidden flags.</li>
+      <li><strong>PowerPyx — GTA 6 Trophy Guide &amp; Roadmap</strong> — powerpyx.com/gta-6-grand-theft-auto-vi-trophy-guide-roadmap/ — roadmap structure, the 200-hour estimate, difficulty 4/10, the Chapter 1 meditation warning, the 18 meditation spots and the both-characters detail.</li>
+      <li><strong>PowerPyx — All Meditation Spot Locations</strong> — powerpyx.com/gta-6-all-meditation-spot-locations/ — 18 meditations across 10 locations; 15 of 18 needed for 100%.</li>
+      <li><strong>GTABase — GTA 6 trophy list</strong> — chapter placements, the 500-action Criminal Profile report (single source, unconfirmed), and the no-missable 100% checklist.</li>
+      <li><strong>Push Square — GTA 6 trophy list report</strong> — the 55-trophy list as reported from Exophase, and the 100% completion requirement.</li>
+    </ul>
+    <p class="fine-print">No Rockstar Games logo, official artwork, box art or game screenshot appears anywhere in this guide. The look is the ledger's own. The app works fully offline: every file it loads lives under app/, and it fetches nothing from the network.</p>
+  </section>
+</main>
+
+<footer>
+  <p>Leonida Ledger — an independent, fan-made trophy guide. Grand Theft Auto and GTA are trademarks of their owners; this guide is not affiliated with Rockstar Games. Trophy names and descriptions are shown as PlayStation publishes them.</p>
+</footer>
+<script type="module" src="app.js"></script>
+</body>
+</html>

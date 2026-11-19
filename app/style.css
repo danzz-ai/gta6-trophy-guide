@@ -1,0 +1,156 @@
+/* Leonida Ledger — own look: deep Vice-night navy, sunset pink-to-amber gradient, teal accents. No game art. */
+:root {
+  --bg: #0c1024;
+  --panel: #151b38;
+  --panel2: #1b2347;
+  --line: #2c3566;
+  --text: #eef1ff;
+  --muted: #aab3d6;
+  --pink: #ff5e8a;
+  --amber: #ffb347;
+  --teal: #2dd4bf;
+  --gold: #ffd75e;
+  --silver: #cbd5e1;
+  --bronze: #e0995c;
+  --plat: #8fe3ff;
+  --danger: #ff7a7a;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  line-height: 1.5;
+}
+.masthead {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 28px 18px;
+  background: linear-gradient(100deg, #1a1040 0%, #3d1145 45%, #0c1024 100%);
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(90deg, var(--pink), var(--amber), var(--teal)) 1;
+}
+.brand { display: flex; gap: 16px; align-items: center; }
+.mark {
+  width: 58px; height: 58px; flex: none;
+  display: grid; place-items: center;
+  font-weight: 800; font-size: 24px; letter-spacing: 1px;
+  color: #14082b;
+  background: linear-gradient(135deg, var(--pink), var(--amber));
+  border-radius: 12px;
+}
+h1 { margin: 0; font-size: 32px; letter-spacing: .5px; }
+.tagline { margin: 2px 0 0; color: var(--muted); font-size: 14px; }
+.stats { min-width: 300px; flex: 1 1 320px; max-width: 460px; }
+.big-number { font-size: 26px; font-weight: 800; }
+.big-number .of { font-size: 16px; color: var(--muted); font-weight: 400; margin-left: 4px; }
+.progress-track { height: 12px; background: #0a0e20; border: 1px solid var(--line); border-radius: 99px; overflow: hidden; margin-top: 6px; }
+.progress-fill { height: 100%; background: linear-gradient(90deg, var(--pink), var(--amber), var(--teal)); transition: width .3s ease; }
+.stat-line { margin: 6px 0 0; font-size: 13px; color: var(--muted); }
+
+.tabs { display: flex; gap: 8px; flex-wrap: wrap; padding: 14px 28px 0; }
+.tab {
+  background: var(--panel); color: var(--text);
+  border: 1px solid var(--line); border-radius: 99px;
+  padding: 8px 16px; font-size: 14px; cursor: pointer;
+}
+.tab.active { background: linear-gradient(90deg, var(--pink), var(--amber)); color: #14082b; border-color: transparent; font-weight: 700; }
+main { padding: 18px 28px 30px; max-width: 1180px; margin: 0 auto; }
+h2 { font-size: 24px; margin: 6px 0 10px; }
+h3 { font-size: 18px; margin: 22px 0 8px; }
+
+.missable-banner {
+  background: #3a1522; border: 1px solid #7a2b3d; border-left: 5px solid var(--danger);
+  border-radius: 10px; padding: 12px 16px; margin-bottom: 16px; font-size: 14px;
+}
+.missable-banner strong { color: var(--danger); }
+
+.controls { display: flex; gap: 12px; flex-wrap: wrap; align-items: end; margin-bottom: 12px; }
+.controls label { font-size: 13px; color: var(--muted); display: grid; gap: 4px; }
+.controls input[type="search"], .controls select {
+  background: var(--panel); color: var(--text);
+  border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; font-size: 14px;
+}
+.controls input[type="search"] { min-width: 240px; }
+.spoiler-toggle { display: flex !important; flex-direction: row !important; align-items: center; gap: 8px !important; color: var(--text) !important; cursor: pointer; padding-bottom: 8px; }
+.spoiler-toggle input { width: 18px; height: 18px; accent-color: var(--pink); }
+
+.toolbar { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 8px; }
+.toolbar button {
+  background: var(--panel2); color: var(--text);
+  border: 1px solid var(--line); border-radius: 8px; padding: 8px 14px; font-size: 14px; cursor: pointer;
+}
+.toolbar button:hover { border-color: var(--pink); }
+.toolbar button.quiet { background: transparent; color: var(--muted); }
+.saved-note { font-size: 13px; color: var(--muted); }
+.result-count { color: var(--muted); font-size: 13px; margin: 4px 0 10px; }
+
+.trophy-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.trophy-card {
+  background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+  padding: 14px 16px;
+}
+.trophy-card.earned { border-color: var(--teal); background: linear-gradient(180deg, #16243d, var(--panel)); }
+.trophy-card.missable-flag { border-left: 5px solid var(--danger); }
+.trophy-head { display: flex; gap: 12px; align-items: flex-start; }
+.trophy-head input[type="checkbox"] { width: 22px; height: 22px; margin-top: 2px; accent-color: var(--teal); flex: none; cursor: pointer; }
+.trophy-title { flex: 1; min-width: 0; }
+.trophy-name { font-size: 17px; font-weight: 700; margin: 0; }
+.trophy-name .spoiler-mask { color: var(--muted); font-style: italic; }
+.trophy-desc { margin: 2px 0 0; color: var(--muted); font-size: 14px; }
+.badges { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+.badge {
+  font-size: 12px; font-weight: 700; letter-spacing: .4px; text-transform: uppercase;
+  border-radius: 99px; padding: 2px 9px; border: 1px solid var(--line); color: var(--muted);
+}
+.badge.platinum { color: var(--plat); border-color: var(--plat); }
+.badge.gold { color: var(--gold); border-color: var(--gold); }
+.badge.silver { color: var(--silver); border-color: var(--silver); }
+.badge.bronze { color: var(--bronze); border-color: var(--bronze); }
+.badge.hidden-badge { color: #c4b5fd; border-color: #7c6bd9; }
+.badge.missable-badge { color: var(--danger); border-color: var(--danger); }
+.badge.kind-badge { color: var(--teal); border-color: var(--teal); }
+.guide-toggle {
+  background: none; border: none; color: var(--amber); font-size: 14px; font-weight: 700;
+  cursor: pointer; padding: 8px 0 0; text-align: left;
+}
+.guide-body { margin-top: 10px; border-top: 1px dashed var(--line); padding-top: 10px; font-size: 14px; }
+.guide-body p { margin: 0 0 8px; }
+.guide-body .count-line { color: var(--teal); font-weight: 700; }
+.guide-sources { font-size: 12.5px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 6px; }
+.guide-sources strong { color: var(--muted); }
+.empty-note { color: var(--muted); padding: 18px; text-align: center; }
+
+.phases { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.phase {
+  background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px;
+}
+.phase-head { display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+.phase-num {
+  width: 34px; height: 34px; flex: none; display: grid; place-items: center;
+  border-radius: 50%; font-weight: 800; color: #14082b;
+  background: linear-gradient(135deg, var(--pink), var(--amber));
+}
+.phase h3 { margin: 0; font-size: 19px; }
+.phase-hours { color: var(--muted); font-size: 13px; }
+.phase p { margin: 8px 0; font-size: 14px; }
+.phase-trophies { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+.phase-trophies .chip {
+  font-size: 12.5px; background: var(--panel2); border: 1px solid var(--line);
+  border-radius: 99px; padding: 3px 10px;
+}
+.phase-trophies .chip.done { border-color: var(--teal); color: var(--teal); }
+.roadmap-summary { color: var(--muted); font-size: 15px; }
+.safety-list li, .source-list li { margin-bottom: 8px; }
+.source-list { font-size: 14px; }
+.fine-print { color: var(--muted); font-size: 13px; }
+footer { padding: 18px 28px 26px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); max-width: 1180px; margin: 0 auto; }
+@media (max-width: 700px) {
+  .masthead, main, .tabs { padding-left: 14px; padding-right: 14px; }
+  h1 { font-size: 25px; }
+  .controls input[type="search"] { min-width: 0; width: 100%; }
+}
